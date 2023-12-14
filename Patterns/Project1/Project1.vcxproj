@@ -143,6 +143,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\Dependencies\glad\src\glad.c" />
+    <ClCompile Include="SceneOne\Fighter.cpp" />
+    <ClCompile Include="SCene\Scene.cpp" />
     <ClCompile Include="SceneOne\AsteroidGroup.cpp" />
     <ClCompile Include="SceneOne\Asteroids.cpp" />
     <ClCompile Include="SceneOne\AsteroidsTwo.cpp" />
@@ -196,6 +198,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\stb_image.h" />
+    <ClInclude Include="SceneOne\Fighter.h" />
+    <ClInclude Include="SCene\Scene.h" />
     <ClInclude Include="SceneOne\AsteroidGroup.h" />
     <ClInclude Include="SceneOne\Asteroids.h" />
     <ClInclude Include="SceneOne\AsteroidsTwo.h" />

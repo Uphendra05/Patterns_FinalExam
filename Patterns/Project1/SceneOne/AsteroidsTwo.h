@@ -16,6 +16,11 @@ public:
 	void Update();
 	void End();
 
+	Model* _model;
+	Model* asteroidOne;
+	Model* asteroidTwo;
+	Model* asteroidThree;
+
 private:
 
 

@@ -18,7 +18,7 @@ enum Camera_Movement {
 };
 
 
-const float SPEED = 0.5f;
+const float SPEED = 5.5f;
 const float SENSITIVITY = 0.1f;
 const float ZOOM = 45.0f;
 

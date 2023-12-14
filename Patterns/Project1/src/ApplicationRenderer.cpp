@@ -186,7 +186,7 @@ void ApplicationRenderer::Start()
 
      Model* directionLightModel = new Model(*Sphere);
      directionLightModel->transform.SetPosition(glm::vec3(1.0f, 3.0f, 0.0f));
-     directionLightModel->transform.SetRotation(glm::vec3(-60, 0, 0));
+     directionLightModel->transform.SetRotation(glm::vec3(80, 0, 70));
      directionLightModel->transform.SetScale(glm::vec3(0.1f));
      Sphere->isVisible = false;
      
@@ -236,6 +236,9 @@ void ApplicationRenderer::Start()
      asteroidTwo = new AsteroidsTwo();
      asteroidTwo->Start();
 
+     fighter = new Fighter();
+     fighter->Start();
+
 #pragma region Lights
 
 Light directionLight;
@@ -245,7 +248,6 @@ directionLight.ambient =  glm::vec4(0.1f, 0.1f, 0.1f, 1.0f);
 directionLight.diffuse =  glm::vec4(0.1f, 0.1f, 0.1f, 1.0f);
 directionLight.specular = glm::vec4(0.1f, 0.1f, 0.1f, 1.0f);
 directionLight.intensity = 0.5f;
-
 
 
 
@@ -291,8 +293,8 @@ void ApplicationRenderer::Render()
     glm::vec3 pos(5, 0, 0);
    // glEnable(GL_BLEND);
   //  glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-   /* float currentFrame = static_cast<float>(glfwGetTime());
-    lastFrame = currentFrame;*/
+    float currentFrame = static_cast<float>(glfwGetTime());
+    lastFrame = currentFrame;
     while (!glfwWindowShouldClose(window))
     {
         Clear();
@@ -333,6 +335,12 @@ void ApplicationRenderer::Render()
          defaultShader->setVec3("viewPos", camera.transform.position.x, camera.transform.position.y, camera.transform.position.z);
          defaultShader->setFloat("time", scrollTime);
          defaultShader->setBool("isDepthBuffer", false);
+
+        //if (/*bool*/)
+        //{
+        //// fighterShader-setbool("explosion", timestep);
+        //}
+        
 
          lightShader->Bind();
          lightShader->setVec3("objectColor", glm::vec3(1, 1, 1));
@@ -400,8 +408,7 @@ void ApplicationRenderer::Clear()
 void ApplicationRenderer::ProcessInput(GLFWwindow* window)
 {
 
-    if (!updateCommands)
-    {
+   
         if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
             glfwSetWindowShouldClose(window, true);
 
@@ -425,7 +432,7 @@ void ApplicationRenderer::ProcessInput(GLFWwindow* window)
             camera.ProcessKeyboard(RIGHT, deltaTime * cameraSpeed);
 
         }
-    }
+   
    
 
     //spaceshipEntity->SpaceShipInputs(window,deltaTime);
@@ -523,8 +530,7 @@ void ApplicationRenderer::DrawDebugBvhNodeAABB(BvhNode* node)
 
              CommandManager::GetInstance().Start();
 
-             camera.transform.SetPosition(glm::vec3(8, 2.0f, -30));
-             camera.transform.SetRotation(glm::vec3(0.0f, 180, 0.0f));
+            
              updateCommands = !updateCommands;
          }
 

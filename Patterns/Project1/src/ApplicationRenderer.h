@@ -26,6 +26,8 @@
 #include "../SceneOne/AsteroidGroup.h"
 #include "../SceneOne/Asteroids.h"
 #include "../SceneOne/AsteroidsTwo.h"
+#include "../SceneOne/Fighter.h"
+
 struct ModelData
 {
 
@@ -92,7 +94,7 @@ private:
 	AsteroidGroup* asteroidGroup;
 	Asteroids* asteroid;
 	AsteroidsTwo* asteroidTwo;
-
+	Fighter* fighter;
 
 
 

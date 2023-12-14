@@ -16,6 +16,8 @@ public:
 	void Update();
 	void End();
 
+	Model* _model;
+
 private:
 
 	

@@ -56,9 +56,11 @@ void AsteroidGroup::Start()
 	renderer->AddModelsAndShader(asteroidTwo, shader);
 
 
-	/*model->isVisible = false;
+	    model->isVisible = false;
 		_model->isVisible = false;
-		_model2->isVisible = false;*/
+		_model2->isVisible = false;
+		asteroidOne->isVisible = false;
+		asteroidTwo->isVisible = false;
 }
 
 void AsteroidGroup::Update(float deltaTime)
