@@ -291,14 +291,14 @@ void ApplicationRenderer::Render()
     glm::vec3 pos(5, 0, 0);
    // glEnable(GL_BLEND);
   //  glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-    float currentFrame = static_cast<float>(glfwGetTime());
-    lastFrame = currentFrame;
+   /* float currentFrame = static_cast<float>(glfwGetTime());
+    lastFrame = currentFrame;*/
     while (!glfwWindowShouldClose(window))
     {
         Clear();
 
 
-        currentFrame = static_cast<float>(glfwGetTime());
+        float currentFrame = static_cast<float>(glfwGetTime());
         deltaTime = currentFrame - lastFrame;
         lastFrame = currentFrame;
 
